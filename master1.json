@@ -3,7 +3,8 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "masterNode": {
-      "type": "string"
+      "type": "string",
+      "value": "test"
     },
     "storageAccountName": {
       "type": "string"
@@ -174,7 +175,7 @@
       "name": "[concat(parameters('namespace'), parameters('vmbasename'), 'vm', '/test')]",
       "location": "[resourceGroup().location]",
       "dependsOn": [
-        "[concat('Microsoft.Compute/virtualMachines/', parameters('vmbasename'),'vm')]"
+        "[concat('Microsoft.Compute/virtualMachines/', parameters('namespace'), parameters('vmbasename'), 'vm')]",
       ],
       "tags": {
         "displayName": "config-app"
